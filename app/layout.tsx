@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Claudia Perales | Arquitecta & Diseñadora",
   description: "Diseño arquitectónico, BIM y visualización 3D en Chiclayo, Perú.",
   keywords: ["arquitecta", "Chiclayo", "BIM", "Revit", "diseño arquitectónico", "renderizado 3D"],
+  icons: { icon: "/icon.svg", shortcut: "/icon.svg" },
   openGraph: { title: "Claudia Carolina Perales Chávez", description: "Arquitectura que equilibra función, materia y emoción.", type: "website", images: ["/images/claudia-profile.png"] },
 };
 

@@ -6,7 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { AnimatePresence, motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
-import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Box, Building2, Calculator, Cuboid, DraftingCompass, GraduationCap, Linkedin, Mail, MapPin, Menu, PenTool, Phone, Ruler, Target, X } from "lucide-react";
+import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Box, Building2, Calculator, Cuboid, DraftingCompass, GraduationCap, Linkedin, Mail, MapPin, Menu, MessageCircle, PenTool, Phone, Ruler, Target, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -88,6 +88,7 @@ export default function Portfolio() {
   return <main ref={root}>
     <AnimatePresence>{!loaded && <motion.div className="loader" exit={{ y: "-100%" }} transition={{ duration: .8, ease: [.76, 0, .24, 1] }}><div className="loader-mark">CP<span>ARQUITECTURA · DISEÑO</span></div><motion.div className="loader-line" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.1 }} /></motion.div>}</AnimatePresence>
     <Cursor /><motion.div className="progress" style={{ scaleX: progress }} />
+    <motion.a className="whatsapp-button" href="https://wa.me/51996402875?text=Hola%20Claudia%2C%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" aria-label="Contactar a Claudia por WhatsApp" initial={{opacity:0,scale:.75}} animate={loaded?{opacity:1,scale:1}:{}} transition={{delay:.45,duration:.55,ease:[.22,1,.36,1]}} whileHover={{y:-5,scale:1.04}} whileTap={{scale:.96}}><span>Hablemos</span><MessageCircle/></motion.a>
 
     <header className="nav"><a href="#inicio" className="brand">CP<span>ARQUITECTURA</span></a><nav className="nav-links"><a href="#proyectos">Proyectos</a><a href="#sobre-mi">Perfil</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></nav><div className="nav-actions"><ThemeToggle /><button className="icon-btn mobile-menu" aria-label="Menú" onClick={() => setMenu(!menu)}>{menu ? <X size={18}/> : <Menu size={18}/>}</button></div></header>
     <AnimatePresence>{menu && <motion.div className="menu-panel" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>{["Proyectos", "Sobre mí", "Servicios", "Contacto"].map((item, i) => <a key={item} href={["#proyectos", "#sobre-mi", "#servicios", "#contacto"][i]} onClick={() => setMenu(false)}>{item}</a>)}</motion.div>}</AnimatePresence>
